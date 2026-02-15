@@ -225,10 +225,21 @@ public:
     /// @endSetters
 
     /// @beginGetters
-    [[nodiscard]] DriftState driftState() const;
-    [[nodiscard]] u16 mtCharge() const;
-    [[nodiscard]] f32 kclSpeedFactor() const;
-    [[nodiscard]] f32 kclRotFactor() const;
+    [[nodiscard]] DriftState driftState() const {
+        return m_driftState;
+    }
+
+    [[nodiscard]] u16 mtCharge() const {
+        return m_mtCharge;
+    }
+
+    [[nodiscard]] f32 kclSpeedFactor() const {
+        return m_kclSpeedFactor;
+    }
+
+    [[nodiscard]] f32 kclRotFactor() const {
+        return m_kclRotFactor;
+    }
 
     /// @brief Factors in vehicle speed to retrieve our hop direction and magnitude.
     /// @addr{0x8057EFF8}

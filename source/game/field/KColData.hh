@@ -112,15 +112,15 @@ public:
         return m_prismCache[idx];
     }
 
-    [[nodiscard]] const std::span<KCollisionPrism>& prisms() const {
+    [[nodiscard]] const std::span<KCollisionPrism> &prisms() const {
         return m_prisms;
     }
 
-    [[nodiscard]] const std::span<EGG::Vector3f>& nrms() const {
+    [[nodiscard]] const std::span<EGG::Vector3f> &nrms() const {
         return m_nrms;
     }
 
-    [[nodiscard]] const std::span<EGG::Vector3f>& vertices() const {
+    [[nodiscard]] const std::span<EGG::Vector3f> &vertices() const {
         return m_vertices;
     }
     /// @endGetters

@@ -2459,22 +2459,6 @@ void KartMove::triggerRespawn() {
     status().setBit(eStatus::TriggerRespawn);
 }
 
-KartMove::DriftState KartMove::driftState() const {
-    return m_driftState;
-}
-
-u16 KartMove::mtCharge() const {
-    return m_mtCharge;
-}
-
-f32 KartMove::kclSpeedFactor() const {
-    return m_kclSpeedFactor;
-}
-
-f32 KartMove::kclRotFactor() const {
-    return m_kclRotFactor;
-}
-
 /// @addr{0x80587B30}
 KartMoveBike::KartMoveBike() : m_leanRot(0.0f) {}
 

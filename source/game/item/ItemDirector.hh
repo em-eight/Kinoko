@@ -28,7 +28,11 @@ public:
 
     static ItemDirector *CreateInstance();
     static void DestroyInstance();
-    [[nodiscard]] ItemInventory &itemInventory(s16 idx);
+
+    [[nodiscard]] const ItemInventory &itemInventory(s16 idx) const {
+        return m_karts[idx].inventory();
+    }
+
     [[nodiscard]] static ItemDirector *Instance() {
         return s_instance;
     }
