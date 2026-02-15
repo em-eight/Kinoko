@@ -184,3 +184,13 @@ MEMList EGG::Heap::s_heapList = MEMList(EGG::Heap::getOffset()); ///< @addr{0x80
 
 EGG::Heap *EGG::Heap::s_currentHeap = nullptr;     ///< @addr{0x80386EA0}
 EGG::Heap *EGG::Heap::s_allocatableHeap = nullptr; ///< @addr{0x80386EA8}
+
+#if defined(__linux__) && defined(__GNUC__)
+// hack needed to hide operator new symbols for gcc
+asm(".hidden _Znwm");
+asm(".hidden _Znwmi");
+asm(".hidden _ZnwmPN3EGG4HeapEi");
+asm(".hidden _Znam");
+asm(".hidden _Znami");
+asm(".hidden _ZnamPN3EGG4HeapEi");
+#endif
