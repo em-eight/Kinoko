@@ -298,7 +298,7 @@ void KTestSystem::startNextTestCase() {
 bool KTestSystem::popTestCase() {
     ASSERT(m_testCases.size() > 0);
     m_testCases.pop();
-    EGG::egg_free(m_stream.data());
+    delete m_stream.data();
 
     return !m_testCases.empty();
 }
@@ -469,7 +469,7 @@ void KTestSystem::OnInit(System::RaceConfig *config, void * /* arg */) {
     size_t size;
     u8 *rkg = Abstract::File::LoadHost(Instance()->getCurrentTestCase().rkgPath.data(), size);
     config->setGhost(rkg);
-    EGG::egg_free(rkg);
+    delete rkg;
 
     config->raceScenario().players[0].type = System::RaceConfig::Player::Type::Ghost;
 }

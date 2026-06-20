@@ -111,7 +111,7 @@ KReplaySystem::~KReplaySystem() {
 
     EGG::egg_delete(m_sceneMgr);
     EGG::egg_delete(m_currentGhost);
-    EGG::egg_free(const_cast<u8 *>(m_currentRawGhost));
+    delete m_currentRawGhost;
 }
 
 /// @brief Determines whether or not the ghost simulation should end.
