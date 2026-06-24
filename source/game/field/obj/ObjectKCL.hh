@@ -107,6 +107,11 @@ public:
             const EGG::Vector3f &prevPos, KCLTypeMask mask, CollisionInfo *info,
             KCLTypeMask *maskOut, u32 timeOffset);
 
+    /// @brief The KCL data backing this object's collision, in the object's local model space.
+    [[nodiscard]] const KColData *kclData() const {
+        return m_objColMgr->data();
+    }
+
 protected:
     ObjColMgr *m_objColMgr;
     EGG::Vector3f m_kclMidpoint;

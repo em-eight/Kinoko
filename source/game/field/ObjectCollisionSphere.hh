@@ -19,6 +19,10 @@ public:
         return m_scaledRadius;
     }
 
+    [[nodiscard]] const EGG::Vector3f &center() const {
+        return m_worldPos;
+    }
+
 private:
     bool m_hasTranslation;
     f32 m_radius;

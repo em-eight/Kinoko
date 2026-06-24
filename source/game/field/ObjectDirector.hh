@@ -56,6 +56,10 @@ public:
         return m_hitDepths[idx];
     }
 
+    [[nodiscard]] const std::vector<ObjectBase *, EGG::Allocator<ObjectBase *>> &objects() const {
+        return m_objects;
+    }
+
     [[nodiscard]] std::vector<ObjectCollidable *, EGG::Allocator<ObjectCollidable *>> &managedObjects() {
         return m_managedObjects;
     }
