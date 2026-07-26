@@ -26,6 +26,7 @@ class Archive : Disposer {
     friend class Host::Context;
 
 public:
+    Archive(void *archiveStart);
     ~Archive();
 
     void unmount();
@@ -36,8 +37,6 @@ public:
     [[nodiscard]] static Archive *Mount(void *archiveStart);
 
 private:
-    Archive(void *archiveStart);
-
     #if defined(__clang__)
     #pragma clang diagnostic push
     #pragma clang diagnostic ignored "-Winvalid-constexpr"

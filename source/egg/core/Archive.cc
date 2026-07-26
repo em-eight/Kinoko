@@ -55,7 +55,7 @@ Archive *Archive::Mount(void *archiveStart) {
 
     if (!archive) {
         // Create a new archive and add it to the list
-        archive = ::new (egg_alloc(sizeof(Archive), static_cast<s32>(alignof(Archive)))) Archive(archiveStart);
+        archive = EGG::egg_new<Archive>(archiveStart);
         s_archiveList.append(archive);
     } else {
         // It already exists, increase the reference count
